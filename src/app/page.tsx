@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import hero from "../../public/hero.jpg";
+import HeroNavigation from "@/components/HeroNavigation";
 
 export default function Home() {
   return (
@@ -36,14 +37,7 @@ export default function Home() {
                     Track your spending, manage your budget, and take control of
                     your finances with our easy-to-use budget tracker app.
                   </p>
-                  <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                    <Link
-                      className="inline-flex h-10 items-center justify-center rounded-md bg-slate-900 px-8 text-sm font-medium text-gray-50  transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 animate-accordion-down shadow-2xl"
-                      href="/sign-in"
-                    >
-                      Get Started
-                    </Link>
-                  </div>
+                  <HeroNavigation />
                 </div>
                 <Image
                   alt="Hero"
