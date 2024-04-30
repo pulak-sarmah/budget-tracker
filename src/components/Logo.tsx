@@ -12,4 +12,12 @@ const Logo = () => {
   );
 };
 
+export const LogoMobile = () => {
+  return (
+    <div className=" font-bold text-2xl flex gap-1 items-center">
+      <PiggyBank className="text-fuchsia-600" size={40} />
+    </div>
+  );
+};
+
 export default Logo;
