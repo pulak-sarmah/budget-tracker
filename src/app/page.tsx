@@ -27,13 +27,13 @@ export default function Home() {
             <div className="container px-4 md:px-6">
               <div className="grid items-center gap-6 lg:grid-cols-[1fr_600px] lg:gap-12 xl:grid-cols-[1fr_800px]">
                 <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm ">
+                  <div className="inline-block rounded-lg bg-gray-200 px-3 py-1 text-sm text-slate-800 ">
                     Introducing
                   </div>
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     Your Personal Budget Tracker
                   </h1>
-                  <p className="max-w-[600px] text-gray-900 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
+                  <p className="max-w-[600px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
                     Track your spending, manage your budget, and take control of
                     your finances with our easy-to-use budget tracker app.
                   </p>
@@ -52,10 +52,10 @@ export default function Home() {
             <div className="container grid gap-6 px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm ">
+                  <div className="inline-block rounded-lg bg-gray-200 text-slate-800 px-3 py-1 text-sm ">
                     Expense Tracker
                   </div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
                     Track your spending
                   </h2>
                   <p className="max-w-[600px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
@@ -68,7 +68,7 @@ export default function Home() {
                     <CardContent className="p-4 grid gap-4">
                       <card.icon className="mx-auto h-10 w-10" />
                       <div className="grid gap-0.5">
-                        <h3 className="text-sm font-bold tracking-wide uppercase text-gray-900 ">
+                        <h3 className="text-sm font-bold tracking-wide uppercase text-gray-500 ">
                           {card.title}
                         </h3>
                         <p className="text-sm text-gray-500 ">
