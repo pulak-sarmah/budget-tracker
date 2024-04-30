@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <ClerkProvider
       signInFallbackRedirectUrl="/dashboard"
-      signUpFallbackRedirectUrl="/dashboard"
+      signUpFallbackRedirectUrl="/wizard"
     >
       <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
         <body className={inter.className}>

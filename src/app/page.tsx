@@ -11,8 +11,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import hero from "../../public/hero.jpg";
 import HeroNavigation from "@/components/HeroNavigation";
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const user = await currentUser();
+
+  if (user) {
+    redirect("/dashboard");
+  }
+
   return (
     <>
       <main className="flex flex-col min-h-[100dvh] bg-gradient-to-bl from-indigo-600 via-purple-700 to-pink-800">
