@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import ThemeProviders from "@/components/providers/ThemeProviders";
+import RootProviders from "@/components/providers/RootProviders";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +23,15 @@ export default function RootLayout({
       signInFallbackRedirectUrl="/dashboard"
       signUpFallbackRedirectUrl="/wizard"
     >
-      <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+      <html
+        lang="en"
+        className="dark"
+        style={{ colorScheme: "dark" }}
+        suppressHydrationWarning
+      >
         <body className={inter.className}>
-          <ThemeProviders>{children}</ThemeProviders>
+          <Toaster richColors position="bottom-right" />
+          <RootProviders>{children}</RootProviders>
         </body>
       </html>
     </ClerkProvider>
