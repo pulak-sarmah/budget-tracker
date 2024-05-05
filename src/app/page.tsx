@@ -10,9 +10,9 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import hero from "../../public/hero.jpg";
-import HeroNavigation from "@/components/HeroNavigation";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { LogoMobile } from "@/components/Logo";
 
 export default async function Home() {
   const user = await currentUser();
@@ -24,10 +24,16 @@ export default async function Home() {
   return (
     <>
       <main className="flex flex-col min-h-[100dvh] bg-gradient-to-bl from-indigo-600 via-purple-700 to-pink-800">
-        <header className="px-4 lg:px-6 h-14 flex items-center">
-          <Link className="flex items-center justify-center" href="#">
-            <MountainIcon className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+        <header className="px-4 lg:px-6 h-14 flex items-center justify-between">
+          <Link className="flex items-center justify-center " href="#">
+            <LogoMobile />
+          </Link>
+          <Link href="/sign-in">
+            <button className="font-regular rounded-full border bg-gradient-to-b from-pink-500 to-blue-500 p-[3px] text-white transition-all duration-300 ease-in-out hover:scale-105">
+              <span className="flex w-full gap-1 rounded-full bg-pink-500 px-5 py-1  text-white text-sm font-bold">
+                Sign In
+              </span>
+            </button>
           </Link>
         </header>
         <section className="flex-1">
@@ -45,7 +51,13 @@ export default async function Home() {
                     Track your spending, manage your budget, and take control of
                     your finances with our easy-to-use budget tracker app.
                   </p>
-                  <HeroNavigation />
+                  <div>
+                    <Link href={"/sign-up"}>
+                      <button className="mt-4 animate-buttonheartbeat rounded-md bg-pink-500 px-6 py-3 text-lg font-semibold text-white">
+                        Get Started
+                      </button>
+                    </Link>
+                  </div>
                 </div>
                 <Image
                   alt="Hero"
