@@ -3,6 +3,7 @@ import prisma from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
 import React from "react";
 import CreateTransactionDialog from "./_components/CreateTransactionDialog";
+import Overview from "./_components/Overview";
 
 const dashboardPage = async () => {
   const user = await currentUser();
@@ -63,6 +64,7 @@ const dashboardPage = async () => {
           </div>
         </div>
       </div>
+      <Overview userSettings={userSettings} />
     </div>
   );
 };
