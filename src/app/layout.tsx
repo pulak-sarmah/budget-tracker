@@ -8,9 +8,12 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Budget tracker",
+  title: "Budget planner",
   description:
     "Track your spending, manage your budget, and take control of your finances with our easy-to-use budget tracker app.",
+
+  keywords:
+    "budget, planner, finance, tracker, spending, control, manage, spa, clerk, nextjs ",
 };
 
 export default function RootLayout({
@@ -29,6 +32,12 @@ export default function RootLayout({
         style={{ colorScheme: "dark" }}
         suppressHydrationWarning
       >
+        <head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </head>
         <body className={inter.className}>
           <Toaster richColors position="bottom-right" />
           <RootProviders>{children}</RootProviders>
