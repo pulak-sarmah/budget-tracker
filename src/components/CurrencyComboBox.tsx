@@ -19,7 +19,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { currencies, Currency } from "@/lib/currencies";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import SkeletonWrapper from "./SkeletonWrapper";
 import { UserSettings } from "@prisma/client";
 import { UpdateUserCurrency } from "@/app/wizard/_actions/userSettings";
@@ -31,7 +31,7 @@ export function CurrencyComboBox() {
   const [selectedOption, setSelectedOption] = React.useState<Currency | null>(
     null
   );
-
+  const queryClient = useQueryClient();
   const userSettings = useQuery<UserSettings>({
     queryKey: ["userSettings"],
     queryFn: () => fetch("/api/user-settings").then((res) => res.json()),
@@ -56,6 +56,9 @@ export function CurrencyComboBox() {
       setSelectedOption(
         currencies.find((currency) => currency.value === data.currency) || null
       );
+      queryClient.invalidateQueries({
+        queryKey: ["overview", "history", "categories"],
+      });
     },
 
     onError: (error) => {
