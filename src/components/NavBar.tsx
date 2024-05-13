@@ -30,7 +30,7 @@ const items = [
   },
   {
     label: "Manage",
-    link: "/manage",
+    link: "/dashboard/manage",
   },
 ];
 
