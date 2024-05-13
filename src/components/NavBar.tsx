@@ -26,7 +26,7 @@ const items = [
   },
   {
     label: "Transactions",
-    link: "/transactions",
+    link: "/dashboard/transactions",
   },
   {
     label: "Manage",
